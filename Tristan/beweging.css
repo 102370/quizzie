@@ -348,7 +348,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FE3700", en
   --highlight: rgba(255, 255, 255, 0.75);
   --text: #ffffff;
   
-  position: relative;
+  position: fixed;
   width: 100%;
   max-width: 1600px;
   border-radius: 12px;
