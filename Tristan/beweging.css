@@ -1,7 +1,21 @@
+@font-face {
+    font-family: 'GT-America-Mono-Medium';
+    src: url(../font/GT-America/GT-America-Mono-Medium-Trial.otf) format('opentype');
+}
+
 body {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #fca86c 0%, #ff6a00 25%,#ffb47e 50%, #ff7513 75%, #ffb987 100%);
+    font-family: 'GT-America-Mono-Medium', monospace;
+    background: hsla(13, 100%, 50%, 1);
+ 
+background: linear-gradient(315deg, hsla(13, 100%, 50%, 1) 0%, hsla(54, 58%, 57%, 1) 100%);
+ 
+background: -moz-linear-gradient(315deg, hsla(13, 100%, 50%, 1) 0%, hsla(54, 58%, 57%, 1) 100%);
+ 
+background: -webkit-linear-gradient(315deg, hsla(13, 100%, 50%, 1) 0%, hsla(54, 58%, 57%, 1) 100%);
+ 
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FE3700", endColorstr="#D1C452", GradientType=1 );
+ 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,11 +69,11 @@ body {
 
 
 .btn {
+    font-family: 'GT-America-Mono-Medium', monospace;
     flex: 1;
     padding: 1.5vh 1vw;
-    background-color: #1a5a8f;
     color: white;
-    border: none;
+    border: solid 2px #ffffff63;
     border-radius: 8px;
     font-size: clamp(16px, 1.5vw, 24px);
     font-weight: 600;
@@ -70,7 +84,8 @@ body {
     justify-content: center;
     overflow: hidden;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.275);
 }
 
 .btn:hover {
@@ -93,30 +108,47 @@ body {
     box-sizing: border-box;
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: solid 2px #ffffff63;
 }
+
+
 
 .btn-logo:hover {
     background-color: #ffb896;
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    border: solid 2px #ffffff63;
 }
 
 .logo {
-    max-height: 100%;
-    max-width: 100%;
+    max-height: 120%;
+    max-width: 120%;
     object-fit: contain;
     background-color: transparent;
     border: none;
-    padding: 0;
+    padding: 20px;
+    margin: 0;
+    border-radius: 5px;
+}
+
+.logo:hover {
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
 }
 
 .armor-bar {
+    margin-top: 2vh;
     display: flex;
-    gap: 0.5vw;
+    gap: 0vw;
     width: 90vw;
-    max-width: 1300px;
+    max-width: 1700px;
     margin-bottom: 2vh;
-    font-size: clamp(32px, 3.5vw, 56px);
+}
+
+.armor-bar img{
+    width: 100px;
+    height: auto;
+    object-fit: contain;
 }
 
 .quiz-container {
@@ -128,8 +160,9 @@ body {
 }
 
 .quiz-left {
+    border: solid 3px #ffffff5c;
     flex: 2;
-    background-color: #fde8d8;
+    background-color: #fde8d8b5;
     border-radius: 12px;
     padding: 3vw;
     display: flex;
@@ -137,8 +170,8 @@ body {
     align-items: center;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
-
 .quiz-header {
+    font-family: 'GT-America-Mono-Medium', monospace;
     background: linear-gradient(135deg, #ff6d00 0%, #ff8c1a 100%);
     color: white;
     padding: 1.5vh 3vw;
@@ -173,6 +206,7 @@ body {
 }
 
 .question-text {
+    font-family: 'GT-America-Mono-Medium', monospace;
     background: #e0f2f1;
     padding: 1.5vh 2vw;
     border-radius: 8px;
@@ -197,6 +231,7 @@ body {
 }
 
 .choice {
+    font-family: 'GT-America-Mono-Medium', monospace;
     background-color: #d79a66;
     border: 2px solid #d79a66;
     border-radius: 8px;
@@ -242,6 +277,7 @@ body {
 }
 
 .explanation-text {
+    font-family: 'GT-America-Mono-Medium', monospace;
     display: none;
     margin-top: 2vh;
     font-size: clamp(18px, 1.5vw, 24px);
@@ -253,6 +289,7 @@ body {
 }
 
 #next-btn {
+    font-family: 'GT-America-Mono-Medium', monospace;
     background: linear-gradient(135deg, #fc945c 0%, #ff8c1a 100%);
     border: none;
     border-radius: 8px;
@@ -277,8 +314,9 @@ body {
 }
 
 .quiz-right {
+    border: solid 3px #ffffff5c;
     flex: 1;
-    background-color: #fff5f0;
+    background-color: #ffe9dea6;
     border-radius: 12px;
     display: flex;
     justify-content: center;
@@ -286,10 +324,10 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
 
-.image-placeholder {
+.question-image-container {
     width: 60%;
     aspect-ratio: 1;
-    background: linear-gradient(135deg, #e0f2f1 0%, #c8e6e0 100%);
+    background-color: (#ffffff);
     border-radius: 12px;
     display: flex;
     justify-content: center;
@@ -298,7 +336,7 @@ body {
     box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.image-placeholder svg {
+.question-image-container svg {
     width: 60%;
     height: 60%;
     fill: #b8d8d3;
@@ -365,14 +403,6 @@ body {
   padding: 8px 16px;
   border-radius: 8px;
   transition: background-color 0.2s ease;
-}
-
-.nav-item:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.nav-item.active {
-  background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Dark mode styles */

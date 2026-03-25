@@ -11,6 +11,7 @@ let selectedOptionIndex = null;
 const questions = [
     {
         questionText: "[Placeholder Question 1: What is healthy movement?]",
+        image: "../media/city.jpg",
         options: [
             { text: "[Option A]", isCorrect: false, explanation: "Wrong because A is incorrect." },
             { text: "[Option B]", isCorrect: true, explanation: "Correct! B is the right way to move." },
@@ -20,6 +21,7 @@ const questions = [
     },
     {
         questionText: "[Placeholder Question 2: How often should you exercise?]",
+        image: "../media/rdam.jpg",
         options: [
             { text: "[Option A]", isCorrect: false, explanation: "Explanation A" },
             { text: "[Option B]", isCorrect: false, explanation: "Explanation B" },
@@ -38,6 +40,7 @@ const qTextEl = document.getElementById("q-text");
 const choicesContainer = document.getElementById("choices-container");
 const nextBtn = document.getElementById("next-btn");
 const armorBarEl = document.getElementById("armor-bar");
+const quizImageEl = document.getElementById("quiz-image");
 
 function renderArmorBar() {
     armorBarEl.innerHTML = "";
@@ -45,10 +48,13 @@ function renderArmorBar() {
     for (let i = 0; i < totalQuestions; i++) {
         const armorPiece = document.createElement("span");
         if (i < currentQuestionIndex) {
-            armorPiece.innerText = "🛡️"; // Filled armor
+            armorPiece.innerHTML = '<img src="Assets/armor-full.png"</img>'; // Filled armor
+            armorPiece.style.opacity = "1";
+        } else if (i === currentQuestionIndex) {
+            armorPiece.innerHTML = '<img src="Assets/armor-half.png"</img>'; // Current question armor
             armorPiece.style.opacity = "1";
         } else {
-            armorPiece.innerText = "🛡️"; // Empty armor
+            armorPiece.innerHTML = '<img src="Assets/armor-empty.png"</img>'; // Empty armor
             armorPiece.style.opacity = "0.3";
         }
         armorBarEl.appendChild(armorPiece);
@@ -65,6 +71,10 @@ function loadQuestion() {
     const currentQ = questions[currentQuestionIndex];
     qNumEl.innerText = currentQuestionIndex + 1;
     qTextEl.innerText = currentQ.questionText;
+
+    if (quizImageEl && currentQ.image) {
+        quizImageEl.src = currentQ.image;
+    }
 
     isShowingExplanation = false;
     selectedOptionIndex = null;
@@ -166,4 +176,3 @@ document.addEventListener('DOMContentLoaded', function() {
        });
      });
    });
-   
