@@ -1,0 +1,134 @@
+/* Reset and base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior:smooth;
+  scroll-padding-top: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.6;
+  background-image: url("../media/city.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.hero {
+  position: relative;
+  height: 200vh;
+  overflow: hidden;
+}
+
+.panel {
+  position: fixed;
+  top: 0;
+  width: 50vw;
+  height: 110vh;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+  transition: transform 0.1s linear; 
+}
+
+.left-panel {
+  left: -7px;
+  /* background: linear-gradient(-135deg ,#122668 0%, #106b39 100%); */
+  background-image: url('../media/lefti.jpg');
+}
+
+.right-panel {
+  right: -7px;
+  /* background: linear-gradient(135deg, #122668 0%, #106b39 100%); */
+  background-image: url('../media/righti.png');
+}
+
+.hero-title {
+  position: fixed;
+  top: 40%;
+  left: 35vw;
+  transform: translate(-50%, -50%) scale(0.3);
+  font-size: clamp(4rem, 18vw, 12rem);
+  font-weight: 900;
+  color: white;
+  opacity: 0;
+  z-index: 10;
+  text-align: center;
+  letter-spacing: -0.03em;
+  text-shadow: 0 0 20px rgba(0,0,0,0.5);
+  will-change: transform, opacity, filter;
+  pointer-events: none;
+  line-height: 0.9;
+  z-index: -10;
+}
+
+.hero-title.title-unfixed {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  transition: all 0.5s ease !important;
+  z-index: 10;
+}
+
+/* Content */
+.content {
+  position: relative;
+  z-index: 20;
+  padding: 15vh 5vw 10vh;
+  background: white;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.o1 {
+  position: relative;
+  height: 80vh;
+  background-color: rgb(199, 151, 93);
+  border-radius: 12px;
+}
+h1 {
+  color: white;
+  text-align: center;
+  font-size: 4rem;
+}
+.header1 hr  {
+  justify-self: center;
+  width: 80%;
+  border: 2px solid white;
+}
+.img1 {
+  background-image: url('../media/stadHuis.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 18vw;
+  height: 25vh;
+  border-radius: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .panel {
+    width: 100vw;
+  }
+  
+  .left-panel {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .right-panel {
+    display: none; 
+  }
+  
+  .content {
+    padding: 10vh 5vw;
+  }
+}
