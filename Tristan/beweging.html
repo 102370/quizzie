@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Movement</title>
+    <link rel="stylesheet" href="beweging.css">
+</head>
+
+<body>
+    <svg style="display: none">
+        <filter id="glass-distortion">
+          <feTurbulence type="turbulence" baseFrequency="0.008" numOctaves="2" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="77" />
+        </filter>
+      </svg>
+      
+      <nav class="glass-nav">
+        <div class="glass-filter"></div>
+        <div class="glass-overlay"></div>
+        <div class="glass-specular"></div>
+        <div class="glass-content">
+          <ul class="nav-list">
+            <button class="btn-logo"><img src="Assets/logo-gem-rotterdam.jpg" class="logo" alt="Logo"></button>
+            <button class="btn"><a href="#" class="nav-item">Info</a></button>
+            <button class="btn"><a href="#" class="nav-item">Quizzes</a></button>
+            <button class="btn"><a href="#" class="nav-item">About Us</a></button>
+          </ul>
+        </div>
+      </nav>
+    <div class="armor-bar" id="armor-bar">
+        <!-- populated by js -->
+    </div>
+
+    <main class="quiz-container">
+        <section class="quiz-left">
+            <div class="quiz-header">
+                QUIZZIE: MOVEMENT
+            </div>
+            <div class="question-row">
+                <div class="question-number" id="q-num">1</div>
+                <div class="question-text" id="q-text">Loading question...</div>
+            </div>
+
+            <div class="choices-container" id="choices-container">
+                <!-- choices populated by js -->
+            </div>
+
+            <button id="next-btn" disabled>next</button>
+        </section>
+
+        <section class="quiz-right">
+            <div class="image-placeholder">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+                </svg>
+            </div>
+        </section>
+    </main>
+
+    <script src="beweging.js"></script>
+</body>
+
+</html>
