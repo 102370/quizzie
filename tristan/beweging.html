@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Movement</title>
+    <link rel="stylesheet" href="beweging.css">
+</head>
+
+<body>
+    <svg style="display: none">
+        <filter id="glass-distortion">
+          <feTurbulence type="turbulence" baseFrequency="0.008" numOctaves="2" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="77" />
+        </filter>
+      </svg>
+      
+      <nav class="glass-nav">
+        <div class="glass-filter"></div>
+        <div class="glass-overlay"></div>
+        <div class="glass-specular"></div>
+        <div class="glass-content">
+          <ul class="nav-list">
+            <a href="../../index.html" class="btn btn-logo"><img src="Assets/rotterdam-1.svg" class="logo" alt="Logo"></a>
+            <a href="../../index.html#goInfo" class="btn nav-item">Info</a>
+            <a href="../../index.html#goQuiz" class="btn nav-item">Quizzes</a>
+            <a href="../../index.html#goAb" class="btn nav-item">About Us</a>
+          </ul>
+        </div>
+      </nav>
+    <div class="armor-bar" id="armor-bar">
+        <!-- populated by js -->
+    </div>
+
+    <main class="quiz-container">
+        <section class="quiz-left">
+            <div class="quiz-header">
+                QUIZZIE: BEWEGING
+            </div>
+            <div class="question-row">
+                <div class="question-number" id="q-num">1</div>
+                <div class="question-text" id="q-text">Loading question...</div>
+            </div>
+
+            <div class="choices-container" id="choices-container">
+                <!-- choices populated by js -->
+            </div>
+
+            <button id="next-btn" disabled>next</button>
+        </section>
+
+        <section class="quiz-right">
+            <div class="question-image-container">
+                <img id="quiz-image" src="" alt="Quiz Image" style="width: 100%; height: 100%; object-fit: cover;" />
+            </div>
+        </section>
+    </main>
+
+    <script src="beweging.js"></script>
+</body>
+
+</html>
