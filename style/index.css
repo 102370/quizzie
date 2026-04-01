@@ -547,22 +547,120 @@ h1 {
 
 
 
-/* Responsive */
-@media (max-width: 768px) {
-  .panel {
-    width: 100vw;
+/* ─── Responsive ─────────────────────────────────────────────────── */
+
+/* Tablet (769 px – 1024 px) */
+@media (max-width: 1024px) {
+  .btn-logo { flex: 0 0 8vw; }
+
+
+  .panel { 
+  width: 51vw;
   }
-  
   .left-panel {
-    left: 50%;
-    transform: translateX(-50%);
+    left: -7px;
+    background-image: url('../media/leftTab.png');
   }
   
   .right-panel {
-    display: none; 
+    right: -7px;
+    background-image: url('../media/rightTab.png');
   }
   
-  .content {
-    padding: 10vh 5vw;
+  h1 { font-size: 3rem; }
+
+  .o1, .o2, .o3 { height: auto; padding-bottom: 4vh; }
+
+  .info1, .info2 { padding: 3vh 6vw; }
+
+  .quizzes {
+    gap: 2vw;
+    padding: 3vh 3vw;
   }
+  .quizzes div { height: 35vh; }
+
+  .team { padding: 3vh 3vw; }
+  .team div { height: auto; min-height: 140px; }
+}
+
+/* Mobile (≤ 768 px) */
+@media (max-width: 768px) {
+  /* Hero panels */
+  .panel { width: 0vw; }
+  .left-panel { left: 0; }
+  .right-panel { display: none; }
+
+  .content { padding: 10vh 5vw; }
+
+  /* Navigation */
+  .glass-content { padding: 8px 10px; }
+  .nav-list { gap: 6px; }
+  .btn {
+    font-size: 13px;
+    height: auto;
+    padding: 8px 10px;
+  }
+  .btn-logo {
+    flex: 0 0 44px;
+    height: 44px;
+  }
+  .logo { padding: 6px; }
+
+  /* Page sections */
+  .container { gap: 4vh; }
+  .o1, .o2, .o3 { height: auto; padding-bottom: 4vh; }
+
+  h1 { font-size: 2.2rem; }
+
+  /* Info section – stack image + text vertically */
+  .info1 {
+    flex-direction: column;
+    padding: 2vh 5vw;
+    gap: 2vh;
+  }
+  .info2 {
+    flex-direction: column;
+    padding: 2vh 5vw;
+    gap: 2vh;
+  }
+  .infoDiv .img {
+    width: 100%;
+    height: 22vh;
+  }
+  .info1 .infoTxt,
+  .info2 .infoTxt { text-align: center; }
+  .info1 .header,
+  .info2 .header { justify-self: center; }
+  .info1 .text,
+  .info2 .text { text-align: center; }
+
+  /* Quiz cards – stack vertically */
+  .quizzes {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    padding: 2vh 5vw;
+    gap: 2vh;
+  }
+  .quizzes div {
+    width: 90%;
+    height: 28vh;
+    min-height: 180px;
+  }
+  .toPage { font-size: 1.2rem; }
+
+  /* About / Team cards – stack vertically */
+  .team {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    padding: 2vh 5vw;
+    gap: 2vh;
+  }
+  .team div {
+    width: 90%;
+    height: auto;
+    min-height: 120px;
+  }
+  .team-name { font-size: 1.4rem; }
 }

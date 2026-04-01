@@ -14,8 +14,14 @@ function updateScroll(progress, heroProgress) {
   progress = Math.min(Math.max(progress, 0), 1);
   heroProgress = Math.min(Math.max(heroProgress, 0), 1);
 
-  leftPanel.style.transform = `translateX(${-70 * progress}vw) translateY(${-40 * progress}vh) scale(${1 + 0.6 * progress}) translateZ(0)`;
-  rightPanel.style.transform = `translateX(${70 * progress}vw) translateY(${-40 * progress}vh) scale(${1 + 0.6 * progress}) translateZ(0)`;
+  if (window.innerWidth <= 768) {
+    // Mobile: single full-width panel zooms in
+    leftPanel.style.transform = `scale(${1 + 0.4 * progress}) translateZ(0)`;
+    rightPanel.style.transform = 'none';
+  } else {
+    leftPanel.style.transform = `translateX(${-70 * progress}vw) translateY(${-40 * progress}vh) scale(${1 + 0.6 * progress}) translateZ(0)`;
+    rightPanel.style.transform = `translateX(${70 * progress}vw) translateY(${-40 * progress}vh) scale(${1 + 0.6 * progress}) translateZ(0)`;
+  }
 
   title.style.opacity = progress;
   title.style.transform = `scale(${0.2 + 0.8 * progress}) translateZ(0)`;
