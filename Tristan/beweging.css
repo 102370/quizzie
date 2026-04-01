@@ -21,7 +21,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FE3700", en
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    padding: 2vh 2vw;
+    padding: 12vh 2vw 2vh 2vw;
     box-sizing: border-box;
     color: #2c3e50;
 }
@@ -40,8 +40,10 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FE3700", en
     border: 1px solid rgba(255, 255, 255, 0.72);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.78), inset 0 -10px 18px rgba(255, 255, 255, 0.12), 0 10px 34px rgba(0, 0, 0, 0.16);
     padding: 20px;
-    position: sticky;
+    position: fixed;
     top: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 100;
     overflow: hidden;
     isolation: isolate;
@@ -78,7 +80,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FE3700", en
     font-size: clamp(16px, 1.5vw, 24px);
     font-weight: 600;
     cursor: pointer;
-    height: 7vh;
+    height: 5.5vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -102,7 +104,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FE3700", en
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 7vh;
+    height: 6.7vh;
     border-radius: 8px;
     cursor: pointer;
     box-sizing: border-box;
@@ -160,9 +162,9 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FE3700", en
 }
 
 .quiz-left {
-    border: solid 3px #ffffff5c;
+    border: solid 3px #ffffffab;
     flex: 2;
-    background-color: #fde8d8b5;
+    background-color: #fde8d85e;
     border-radius: 12px;
     padding: 3vw;
     display: flex;
@@ -232,12 +234,12 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FE3700", en
 
 .choice {
     font-family: 'GT-America-Mono-Medium', monospace;
-    background-color: #d79a66;
-    border: 2px solid #d79a66;
+    background-color: #f7a86388;
+    border: 2px solid #ebbd95;
     border-radius: 8px;
     padding: 2vh 1vw;
     font-size: clamp(18px, 1.6vw, 26px);
-    font-weight: 600;
+    font-weight: 400;
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
@@ -261,19 +263,66 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FE3700", en
 
 .choice.expanded {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     box-sizing: border-box;
     z-index: 10;
     cursor: default;
     flex-direction: column;
-    background-color: #a85810;
-    border-color: #a85810;
+    justify-content: center;
+    align-items: center;
     color: white;
     font-size: clamp(24px, 2.2vw, 32px);
+    font-weight: 700;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    text-align: center;
+    margin: 0;
+    animation: expandChoiceReal 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.choice.collapsing {
+    position: absolute;
+    box-sizing: border-box;
+    z-index: 10;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    display: flex;
+    margin: 0;
+    animation: collapseChoiceReal 0.4s ease-in forwards;
+}
+
+@keyframes expandChoiceReal {
+    0% {
+        top: var(--start-top);
+        left: var(--start-left);
+        width: var(--start-width);
+        height: var(--start-height);
+        transform: scale(1);
+    }
+    100% {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: scale(1);
+    }
+}
+
+@keyframes collapseChoiceReal {
+    0% {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    100% {
+        top: var(--start-top);
+        left: var(--start-left);
+        width: var(--start-width);
+        height: var(--start-height);
+        opacity: 0;
+    }
 }
 
 .explanation-text {
@@ -282,10 +331,28 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FE3700", en
     margin-top: 2vh;
     font-size: clamp(18px, 1.5vw, 24px);
     font-weight: normal;
+    line-height: 1.6;
+    padding: 0 2vw;
 }
 
-.choice.expanded .explanation-text {
+.choice.expanded .explanation-text,
+.choice.collapsing .explanation-text {
     display: block;
+    animation: fadeInExplanation 0.6s ease-in forwards;
+}
+
+.choice.collapsing .explanation-text {
+    animation: fadeOutExplanation 0.3s ease-out forwards;
+}
+
+@keyframes fadeInExplanation {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeOutExplanation {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
 #next-btn {
@@ -314,9 +381,9 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FE3700", en
 }
 
 .quiz-right {
-    border: solid 3px #ffffff5c;
+    border: solid 3px #ffffffbb;
     flex: 1;
-    background-color: #ffe9dea6;
+    background-color: #fde8d85e;
     border-radius: 12px;
     display: flex;
     justify-content: center;
@@ -339,7 +406,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FE3700", en
 .question-image-container svg {
     width: 60%;
     height: 60%;
-    fill: #b8d8d3;
+    fill: #d8c9b8;
 }
 
 /* Glass Navigation Container */
@@ -349,7 +416,10 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FE3700", en
   --text: #ffffff;
   
   position: fixed;
-  width: 100%;
+  top: 2vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
   max-width: 1600px;
   border-radius: 12px;
   overflow: hidden;
