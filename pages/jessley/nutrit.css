@@ -481,3 +481,77 @@ body {
     --highlight: rgba(255, 255, 255, 0.15);
   }
 }
+
+/* ─── Responsive ─────────────────────────────────────────────────── */
+
+/* Tablet (769 px – 1024 px) */
+@media (max-width: 1024px) {
+  body { padding: 11vh 2vw 2vh; }
+
+  .btn-logo { flex: 0 0 8vw; }
+
+  .armor-bar img { width: 70px; }
+
+  .quiz-container { gap: 2vw; }
+
+  .quiz-left { padding: 2vw; }
+}
+
+/* Mobile (≤ 768 px) */
+@media (max-width: 768px) {
+  body { padding: 10vh 3vw 3vw; }
+
+  /* Navigation */
+  .glass-content { padding: 8px 10px; }
+  .nav-list { gap: 6px; }
+  .btn {
+    font-size: 13px;
+    height: auto;
+    padding: 8px 10px;
+  }
+  .btn-logo {
+    flex: 0 0 44px;
+    height: 44px;
+  }
+  .logo { padding: 6px; }
+
+  /* Armor bar – shrink icons so all 10 fit on screen */
+  .armor-bar {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .armor-bar img { width: 28px; }
+
+  /* Quiz layout – stack question panel above image panel */
+  .quiz-container {
+    flex-direction: column;
+    width: 100%;
+    gap: 2vh;
+  }
+
+  .quiz-left { padding: 4vw; }
+
+  /* Image panel becomes a compact banner */
+  .quiz-right {
+    flex: none;
+    height: 22vh;
+    min-height: 120px;
+  }
+  .question-image-container {
+    width: 90%;
+    aspect-ratio: auto;
+    height: 100%;
+  }
+
+  /* Choices grid: single column on very narrow screens */
+  .choices-container {
+    grid-template-columns: 1fr;
+    gap: 2vw;
+  }
+
+  #next-btn {
+    font-size: clamp(18px, 4vw, 26px);
+    padding: 1.5vh 6vw;
+  }
+}
