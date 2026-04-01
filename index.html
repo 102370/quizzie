@@ -6,15 +6,39 @@
     <title>Quizzie</title>
     <link rel="stylesheet" href="style/index.css">
     <script src="script/script.js" defer></script>
+    <script src="script/nav.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
+    <svg style="display: none">
+        <filter id="glass-distortion">
+          <feTurbulence type="turbulence" baseFrequency="0.002" numOctaves="2" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="77" />
+        </filter>
+      </svg>
+      
+      <nav class="glass-nav">
+        <div class="glass-filter"></div>
+        <div class="glass-overlay"></div>
+        <div class="glass-specular"></div>
+        <div class="glass-content">
+          <ul class="nav-list">
+            <button class="btn-logo"><a href="index.html#goHome"><img src="media/rotterdam-1.svg" class="logo" alt="Logo"></a></button>
+            <a class="btn" href="index.html#goInfo" class="nav-item">Info</a>
+            <a class="btn" href="index.html#goQuiz" class="nav-item">Quizzes</a>
+            <a class="btn" href="index.html#toAbUs" class="nav-item">About Us</a>
+            </ul>
+        </div>
+      </nav>
+    <div class="container" id="goHome">
         <section class="hero">
             <div class="panel left-panel"></div>
             <div class="panel right-panel"></div>
             <h1 class="hero-title">Quizzie</h1>
         </section>
-        <section class="o1">
+        <section class="o1" id="goInfo">
             <div class="infoDiv">
                 <div class="header1">
                     <br>
@@ -22,13 +46,65 @@
                     <hr>
                 </div>
                 <div class="info1">
-                    <div class="img1">
+                    <div class="img">
                     </div>
-                    <div class="infoTxt1"></div>
+                    <div class="infoTxt">
+                        <div class="header"><h3>- Gemeente Rotterdam -</h3></div><br>
+                        <div class="text"><p>Gemeente Rotterdam is de lokale overheid van de stad Rotterdam, gelegen in de provincie Zuid-Holland. De gemeente is verantwoordelijk voor het beheren van stadsdiensten zoals onderwijs, gezondheidszorg, infrastructuur en cultuur. Rotterdam is een moderne en dynamische stad, bekend om haar haven, architectuur en internationale karakter. De gemeente speelt een belangrijke rol in het bevorderen van de economische groei en het welzijn van haar inwoners.</p></div>
+                    </div>
                 </div>
                 <div class="info2">
-                    <div class="img2"></div>
-                    <div class="infoTxt2"></div>
+                    <div class="img"></div>
+                    <div class="infoTxt">
+                            <div class="header"><h3>- Quizzie -</h3></div><br>
+                        <div class="text"><p>Quizzie is een initiatief van de gemeente Rotterdam waarmee we jou willen helpen gezondere keuzes te maken. Door middel van een interactieve quiz krijg je inzicht in drie belangrijke thema’s: beweging, voeding en mentale gezondheid. Ontdek hoe actief je bent, welke keuzes je maakt in je voeding en hoe je je mentale welzijn kunt verbeteren. Na de quiz ontvang je praktische tips die je direct kunt toepassen. Doe mee en zet de eerste stap naar een gezonder en gelukkiger leven!</p></div>
+                    </div>
+                </div>
+        </section>
+        <section class="o2" id="goQuiz">
+            <div class="quizDiv">
+                <div class="header2">
+                    <br>
+                    <h1>02 - Quizzes</h1>
+                    <hr>
+                </div>
+                <div class="quizzes">
+                    <div class="fitness">
+                        <h1 class="title bungee-regular">Fitness quiz</h1>
+                        <a href=""><button class="toPage bungee-regular">Doe de Quiz!</button></a>
+                    </div>
+                    <div class="nutrition">
+                        <h1 class="title bungee-regular">Voeding quiz</h1>
+                        <a href=""><button class="toPage bungee-regular">Doe de Quiz!</button></a>
+                    </div>
+                    <div class="mental">
+                        <h1 class="title bungee-regular">Mentale quiz</h1>
+                        <a href=""><button class="toPage bungee-regular">Doe de Quiz!</button></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="o3" id="toAbUs">
+            <div class="aboutDiv">
+                <div class="header3">
+                    <br>
+                    <h1>03 - About Us</h1>
+                    <hr>
+                </div>
+                <div class="team">
+                    <div class="person1">
+                        <h2 class="team-name bungee-regular">Tristan Vogelezang</h2>
+                        <p class="team-desc">Quiz template, fitness quiz, styleguide</p>
+                    </div>
+                    <div class="person2">
+                        <h2 class="team-name bungee-regular">Jessley <br> van Driel</h2>
+                        <p class="team-desc">home page, voeding quiz, prototype, wireframe, moodbord</p>
+                    </div>
+                    <div class="person3">
+                        <h2 class="team-name bungee-regular">Hardil<br>Singh</h2>
+                        <p class="team-desc">mental support, mentale quiz</p>
+                    </div>
                 </div>
             </div>
         </section>
