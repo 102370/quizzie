@@ -19,7 +19,7 @@ const quiz = [
     // Mental Health Questions
     {
         q: "Wat is een van de belangrijkste voordelen van regelmatig mindfulness beoefenen?",
-        img: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&h=800&fit=crop&auto=format&q=80",
+        img: "Assets/q1.jpeg",
         choices: [
             { ans: "Verhoogt stress", right: false, explain: "Onjuist. Mindfulness vermindert juist stress." },
             { ans: "Vermindert concentratie", right: false, explain: "Onjuist. Mindfulness verbetert juist concentratie." },
@@ -29,7 +29,7 @@ const quiz = [
     },
     {
         q: "Welke factor draagt het meest bij aan een positieve mentale gezondheid?",
-        img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&h=800&fit=crop&auto=format&q=80",
+        img: "Assets/q2.png",
         choices: [
             { ans: "Alleen zijn zonder contact", right: false, explain: "Onjuist. Sociale contact is juist essentieel voor mentale gezondheid." },
             { ans: "Sociale steun en verbinding", right: true, explain: "Correct! Sociale steun van vrienden, familie of collega's versterkt gevoelens van verbondenheid en vermindert eenzaamheid." },
@@ -39,7 +39,7 @@ const quiz = [
     },
     {
         q: "Waarom is voldoende slaap belangrijk voor mentale gezondheid?",
-        img: "https://images.unsplash.com/photo-1534067783941-51c7e75f0df0?w=1200&h=800&fit=crop&auto=format&q=80",
+        img: "Assets/q3.jpg",
         choices: [
             { ans: "Het heeft geen effect", right: false, explain: "Onjuist. Slaap is essentieel voor mentale gezondheid." },
             { ans: "Het vermindert geheugen en stemming", right: false, explain: "Onjuist. Slaap verbetert juist geheugen en stemming." },
@@ -49,7 +49,7 @@ const quiz = [
     },
     {
         q: "Wat is een kenmerk van gezonde stresshantering?",
-        img: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&h=800&fit=crop&auto=format&q=80",
+        img: "Assets/q4.jpg",
         choices: [
             { ans: "Emoties onderdrukken", right: false, explain: "Onjuist. Emoties onderdrukken is geen gezonde manier om stress te hanteren." },
             { ans: "Actief copingstrategieën gebruiken, zoals plannen of praten met anderen", right: true, explain: "Correct! Gezonde stresshantering omvat strategieën zoals plannen, praten over problemen en ontspanningsoefeningen." },
@@ -59,7 +59,7 @@ const quiz = [
     },
     {
         q: "Welke rol speelt lichaamsbeweging in mentale gezondheid?",
-        img: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=800&fit=crop&auto=format&q=80",
+        img: "Assets/q5.webp",
         choices: [
             { ans: "Verhoogt depressie", right: false, explain: "Onjuist. Beweging vermindert juist depressie." },
             { ans: "Vermindert angst en verbetert stemming", right: true, explain: "Correct! Lichaamsbeweging stimuleert de aanmaak van endorfines en vermindert angst." },
@@ -69,7 +69,7 @@ const quiz = [
     },
     {
         q: "Wat is een veelvoorkomend symptoom van depressie?",
-        img: "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=1200&h=800&fit=crop&auto=format&q=80",
+        img: "Assets/q6.png",
         choices: [
             { ans: "Verhoogde energie", right: false, explain: "Onjuist. Depressie gaat juist met vermoeidheid gepaard." },
             { ans: "Aanhoudende sombere stemming en verlies van interesse", right: true, explain: "Correct! Depressie kenmerkt zich door sombere stemming, verlies van interesse en vermoeidheid." },
@@ -79,7 +79,7 @@ const quiz = [
     },
     {
         q: "Waarom kan het bijhouden van een dagboek nuttig zijn voor mentale gezondheid?",
-        img: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1200&h=800&fit=crop&auto=format&q=80",
+        img: "Assets/q7.jpg",
         choices: [
             { ans: "Het heeft geen effect", right: false, explain: "Onjuist. Een dagboek kan erg effectief zijn." },
             { ans: "Het helpt gedachten en gevoelens te verwerken en zelfinzicht te vergroten", right: true, explain: "Correct! Schrijven helpt emoties te ordenen en zorgt voor zelfreflectie en stressvermindering." },
@@ -89,7 +89,7 @@ const quiz = [
     },
     {
         q: "Welke van de volgende gewoonten ondersteunt mentale veerkracht het meest?",
-        img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1200&h=800&fit=crop&auto=format&q=80",
+        img: "Assets/q8.png",
         choices: [
             { ans: "Negatieve zelfpraat", right: false, explain: "Onjuist. Dit schaadt veerkracht." },
             { ans: "Regelmatige ontspanning en zelfzorg", right: true, explain: "Correct! Ontspanning en zelfzorg versterken het vermogen om met tegenslagen om te gaan." },
@@ -99,7 +99,7 @@ const quiz = [
     },
     {
         q: "Hoe kan sociale media invloed hebben op mentale gezondheid?",
-        img: "https://images.unsplash.com/photo-1611532736612-b5b83d6c3a41?w=1200&h=800&fit=crop&auto=format&q=80",
+        img: "Assets/q9.jpg",
         choices: [
             { ans: "Alleen positieve effecten", right: false, explain: "Onjuist. Sociale media hebben ook negatieve effecten." },
             { ans: "Kan zowel positieve als negatieve effecten hebben, afhankelijk van gebruik", right: true, explain: "Correct! Sociale media kunnen steun bieden, maar ook stress en vergelijking verhogen." },
@@ -109,7 +109,7 @@ const quiz = [
     },
     {
         q: "Wat is een belangrijk kenmerk van een gezonde copingstrategie bij stressvolle situaties?",
-        img: "https://images.unsplash.com/photo-1502904550040-7534597429ae?w=1200&h=800&fit=crop&auto=format&q=80",
+        img: "Assets/q10.png",
         choices: [
             { ans: "Vermijden van problemen", right: false, explain: "Onjuist. Dit maakt problemen juist erger." },
             { ans: "Actieve aanpak, zoals probleemoplossing en emotionele ondersteuning zoeken", right: true, explain: "Correct! Effectieve copingstrategieën omvatten actief problemen aanpakken en hulp zoeken." },
